@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {border: 3px solid #790707;}
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid rgb(110, 6, 6);
+            box-sizing: border-box;
+        }
+        h2{
+            text-align: center;
+        }
+        button {
+            background-color: rgb(179, 28, 28);
+            color: white;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+        }
+        .container {
+            width: 60%;
+            padding: 12px 300px;
+            text-align: center;
+        }
+        span.psw {
+            float: none;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<form action= "/" method="POST">
+    <h1>{{error}}</h1>
+    <div class="container">
+        <label><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <form action="../routes/create_account.js">
+            <button type="submit" id = "CreateAccount">Login</button>
+        </form>
+     
+
+    </div>
+
+    <footer>
+        <p>Don't have an account? <a href="/create_account">Create Account</a></p>
+    </footer>
+</form>
+
+</body>
+</html>
