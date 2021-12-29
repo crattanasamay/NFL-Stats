@@ -3,6 +3,7 @@ const app = express()
 const path = require('path');
 const loginRouter = require('./routes/login');
 const createAccountRouter = require('./routes/create_account');
+const home_page = require('./routes/home_page');
 const passport = require('passport');
 const session = require('express-session')
 const dashboard = require('./routes/dashboard')
@@ -38,7 +39,8 @@ app.use(passport.session());
 //setup our middleware
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use('/',loginRouter);
+app.use('/',home_page)
+app.use('/login',loginRouter);
 app.use('/create_account',createAccountRouter);
 app.use('/dashboard',dashboard)
 
