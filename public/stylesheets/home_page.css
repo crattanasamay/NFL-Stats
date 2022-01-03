@@ -72,10 +72,22 @@ html, body {
 
 
 .column{
+    background-color: rgb(71, 69, 69);
+    color:white;
     float:left;
     width: 33.33%;
     height: 300px;
     text-align: center;
+}
+.column::after{
+    text-align: center;
+}
+.circle{
+    height:100px;
+    width: 100px;
+    background-color:white;
+    border-radius: 50%;
+    display: block;
 }
 
 
@@ -86,3 +98,7 @@ html, body {
     }
   }
 
+footer{
+    background-color: rgb(47, 47, 47);
+    
+}
