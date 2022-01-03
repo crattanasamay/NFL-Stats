@@ -3,10 +3,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+
+
+li{
+  float:left;
 }
 
-h1{
-  color:blue;
+a {
+  display: block;
+  padding: 8px;
+  background-color: black;
 }
