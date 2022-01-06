@@ -75,9 +75,13 @@ html, body {
     background-color: rgb(71, 69, 69);
     color:white;
     float:left;
-    width: 33.33%;
+    width: 50%;
     height: 300px;
     text-align: center;
+}
+
+.column:nth-child(1){
+    background: rgb(104, 187, 142);
 }
 .column::after{
     text-align: center;
@@ -88,6 +92,12 @@ html, body {
     background-color:white;
     border-radius: 50%;
     display: block;
+}
+.container1{
+    border: 1px rgb(151, 39, 39);
+    
+    position:relative;
+    text-align: center;;
 }
 
 
