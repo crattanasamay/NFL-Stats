@@ -1,6 +1,4 @@
 const express = require('express')
-const { user } = require('osenv')
-const { Database } = require('sqlite3')
 var router = express.Router()
 const database = require('../database/testdb')
 const validate = require('../config/validate')
@@ -17,7 +15,6 @@ router.post('/',async function(req,res,next){
   //   //console.log("not a good password, try again")
   //   return res.render('./create_account',{error:'Not strong enough password. Provide a lowercase,uppercase, and number!'});
   // }
-  
   let v = await database.getEmail(req.body.email)
   if(v == undefined){
     await database.insertUser(req.body);

@@ -30,6 +30,8 @@ app.use(session(session_config))
 app.use(flash());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/public',express.static(__dirname + '/public'));
+
 
 //Passport middleware
 app.use(passport.initialize());
@@ -37,10 +39,10 @@ app.use(passport.session());
 
 //setup our middleware
 app.set('views', path.join(__dirname, 'views'));
-app.use('/public',express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
-app.use('/',homePage);
 app.use('/login',loginRouter);
+
+app.use('/',homePage);
 app.use('/create_account',createAccountRouter);
 app.use('/dashboard',dashboard)
 

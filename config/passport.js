@@ -7,7 +7,6 @@ module.exports = function(passport) {
         usernameField: 'email',
         passwordField: 'password'
     },async function(username,password,done){
-        console.log("Hello")
         let user = await database.getEmail(username)
         //console.log(user)
         // if email is not found
