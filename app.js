@@ -40,9 +40,9 @@ app.use(passport.session());
 //setup our middleware
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use('/login',loginRouter);
 
-app.use('/',homePage);
+app.use('/',loginRouter);
+app.use('/login',loginRouter);
 app.use('/create_account',createAccountRouter);
 app.use('/dashboard',dashboard)
 

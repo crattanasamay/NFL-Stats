@@ -11,11 +11,11 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/login',async function(req,res,next){
+router.post('/',async function(req,res,next){
 
   passport.authenticate('local',{
     successRedirect: './dashboard',
-    failureRedirect: './',
+    failureRedirect: '/',
   })(req,res,next);
 })
 

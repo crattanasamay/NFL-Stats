@@ -40,19 +40,3 @@ html, body {
 
 
 
-form{
-    text-align: center;
-    position:re;
-    color: white;
-    height: 400px;
-    width: 400px;
-    background-color: rgb(25, 70, 17);
-}
-label{
-    display:block;
-}
-
-button{
-    text-align: center;
-    display:block;
-}
