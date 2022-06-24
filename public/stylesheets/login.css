@@ -1,9 +1,10 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
     height:100%;
     font: 14px sans-serif;
-}
+    width: 100%;
+  }
 
   
 ul{
@@ -12,12 +13,10 @@ ul{
     padding: 0;
     background-color: rgb(71, 69, 69);
     overflow: hidden;
-
-
 }
 
  
-
+  
 li a {
     display: block;
     padding: 15px;
@@ -25,9 +24,6 @@ li a {
     color: white;
     text-decoration: none;
     font-size: 20px;
-}
-.containerForm{
-    text-align: center;
 }
 
 .aligntextleft{
@@ -37,5 +33,21 @@ li a {
     float: right;
 }
 
+.form-container{
+    text-align: center;
+    height:600px;
+    position: relative;
+}
 
+.vertical-center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
+form{
+    border: 12px black;
+}
