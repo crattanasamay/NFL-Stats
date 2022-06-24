@@ -3,30 +3,29 @@ html, body {
     padding: 0;
     height:100%;
     font: 14px sans-serif;
-    background-color:rgb(27, 32, 32)
-  }
+}
 
   
-  ul{
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      background-color: rgb(71, 69, 69);
-      overflow: hidden;
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(71, 69, 69);
+    overflow: hidden;
 
 
-  }
-  
+}
+
  
-  
-  li a {
+
+li a {
     display: block;
     padding: 15px;
     background-color: rgb(71, 69, 69);
     color: white;
     text-decoration: none;
     font-size: 20px;
-  }
+}
 .containerForm{
     text-align: center;
 }
