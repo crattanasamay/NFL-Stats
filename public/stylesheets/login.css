@@ -4,6 +4,7 @@ body {
     height:100%;
     font: 14px sans-serif;
     width: 100%;
+    background: rgb(75, 74, 74);
   }
 
   
@@ -36,10 +37,6 @@ li a {
 .form-container{
     text-align: center;
     height:600px;
-    position: relative;
-}
-
-.vertical-center{
     margin: 0;
     position: absolute;
     top: 50%;
@@ -48,6 +45,4 @@ li a {
     transform: translate(-50%, -50%);
 }
 
-form{
-    border: 12px black;
-}
+
