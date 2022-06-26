@@ -8,24 +8,19 @@ module.exports = function(passport) {
         passwordField: 'password'
     },async function(username,password,done){
         let user = await database.getEmail(username)
-        //console.log(user)
-        // if email is not found
         if(user == undefined){
- 
-           done(null,false,{error:'Email does not exist'})
-            
+            console.log("email does not exist")
+           done(null,false,{error:'Email Does Not Exist'})
         }
-	
-	else{
-            //console.log("User Exists, Please Check for password")
+        else{
             try{
                 if(await bcrypt.compare(password,user.password)){
-                    //console.log('Correct Password')
                     return done(null,user)
-                }
-		else{
-                    return done(null,false,{error:'Password incorrect'})
-                }
+            }
+        else{
+                console.log('password incorrect')
+                return done(null,false,{error:'Password Incorrect'})
+            }
             }catch(e){
                 done(e)
             }
@@ -43,7 +38,16 @@ module.exports = function(passport) {
         
     })
 
+    function checkAuthenicated(req,res,next){
+        if(req.isAuthenticated()){
+            return next()
+        }
+        
+        res.redirect('/login')
+    }
+
 }
-    
+
+
    
     

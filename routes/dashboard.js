@@ -5,9 +5,10 @@ const passport = require('passport');
 var userId;
 const axios = require('axios');
 const Chart = require('chart.js');
+const pass = require('../config/passport')
 
 
-router.get('/',function(req,res,next){
+router.get('/',  function(req,res,next){
     var myMap = new Map();
     var obj;
     let user = req.user;
@@ -68,3 +69,4 @@ router.post('/',async function(req,res,next){
 
 
 module.exports = router
+

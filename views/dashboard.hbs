@@ -4,24 +4,28 @@
 	<title>Confirmation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="stylesheets/util.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+	<link rel="icon" href="../public/imgs/stadium.jpg">
+	<link rel ="stylesheet" type="text/css" href="../public/stylesheets/dashboard.css">
+
+
 
 <!--===============================================================================================-->
 </head>
 <body onload="createGraph()">
+
+	<div class="header">
+        <ul>
+            <li><a href="/" class="aligntextleft">NFL Tracker</a></li>
+            <li><a href="#" class="aligntextright">Home</a></li>
+            <li><a href="/" class="aligntextright">About</a></li>
+        </ul>
+    </div>
 	<h1>Welcome back User! {{user.first_name}}  {{user.last_name}} </h1>
 
-
+{{!-- 
 	<form action="/dashboard" method="POST">
 		<label>First Name:</label>
 		<input type="text" name="fname" value={{user.first_name}}><br>
@@ -75,7 +79,7 @@
 			ctx.canvas.parentNode.style.height = '400px';
 			ctx.canvas.parentNode.style.width = '400px';
 		}
-	</script>
+	</script> --}}
 
 
 

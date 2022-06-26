@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    font: 14px sans-serif;
+    width: 100%;
+    background-color: aqua;
+  }
+
+  
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(71, 69, 69);
+    overflow: hidden;
+}
+
+ 
+  
+li a {
+    display: block;
+    padding: 15px;
+    background-color: rgb(71, 69, 69);
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.aligntextleft{
+    float: left;
+}
+.aligntextright{
+    float: right;
+}
+

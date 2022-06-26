@@ -4,7 +4,6 @@ body {
     height:100%;
     font: 14px sans-serif;
     width: 100%;
-    background: rgb(75, 74, 74);
   }
 
   
@@ -44,12 +43,14 @@ li a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: aliceblue;
+    border: 2px solid black;
+    
 }
 
 form{
     justify-content: center;
     align-content: center;
-    height:420px;
+    height:360px;
     width: 320px;
     background-color: aliceblue;
     
