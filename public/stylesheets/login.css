@@ -36,13 +36,45 @@ li a {
 
 .form-container{
     text-align: center;
-    height:600px;
+    height:420px;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    background-color: aliceblue;
+}
+
+form{
+    justify-content: center;
+    align-content: center;
+    height:420px;
+    width: 320px;
+    background-color: aliceblue;
+    
+}
+
+.form-container ul{
+    background-color: aliceblue;
+
+}
+
+.form-container p a{
+    background-color: aliceblue;
+    color:black;
+}
+
+.form-container input{
+    text-align: center;
+}
+
+.form-container ul li button{
+    height: 30px;
+    width: 75px;
 }
 
 
+.form-container li{
+    padding: 6px;
+}
