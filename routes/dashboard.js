@@ -12,37 +12,43 @@ router.get('/',  function(req,res,next){
     var myMap = new Map();
     var obj;
     let user = req.user;
-    axios.get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/3/roster").then(function(response){
-        //"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams"
-        //https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams
-        var object = response.data.athletes;
-        var players = object[0].items;
-        for(i = 0; i < object.length;i++){
-            for(j=0; j < object[i].items.length;j++){
-                console.log(object[i].items[j].displayName + " : " + object[i].items[j].position.displayName )
-                var position = object[i].items[j].position.displayName;
-                if (myMap.has(position)) {
-                    var counter = myMap.get(position);
-                    counter++;
-                    myMap.set(position,counter);
-                } else {
-                    myMap.set(object[i].items[j].position.displayName, 1);
-                }
-            }
-        }
-        //console.log(myMap)
-        obj = Object.fromEntries(myMap)
-        userId = user.id
-        console.log(obj)
-        res.render('../views/dashboard',{user, obj})
+    // axios.get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/3/roster").then(function(response){
+    //     //"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams"
+    //     //https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams
+    //     var object = response.data.athletes;
+    //     var players = object[0].items;
+    //     for(i = 0; i < object.length;i++){
+    //         for(j=0; j < object[i].items.length;j++){
+    //             console.log(object[i].items[j].displayName + " : " + object[i].items[j].position.displayName )
+    //             var position = object[i].items[j].position.displayName;
+    //             if (myMap.has(position)) {
+    //                 var counter = myMap.get(position);
+    //                 counter++;
+    //                 myMap.set(position,counter);
+    //             } else {
+    //                 myMap.set(object[i].items[j].position.displayName, 1);
+    //             }
+    //         }
+    //     }
+    //     //console.log(myMap)
+    //     obj = Object.fromEntries(myMap)
+    //     userId = user.id
+    //     console.log(obj)
+    //     res.render('../views/dashboard',{user, obj})
         
   
-    }).catch(function(error){
-        console.log(error);
-    })
-    //console.log(user)
-    //console.log(user.id)
+    // }).catch(function(error){
+    //     console.log(error);
+    // })
+    // //console.log(user)
+    // //console.log(user.id)
+    axios.get("https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams?limit=32").then(function(response){
 
+    var object = response.data;
+    console.log(object)
+
+    })
+    res.render('./dashboard')
    
 
 })
