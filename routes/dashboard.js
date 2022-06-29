@@ -8,9 +8,9 @@ const Chart = require('chart.js');
 const pass = require('../config/passport')
 
 
-router.get('/',  function(req,res,next){
+router.get('/',  async function(req,res,next){
     var myMap = new Map();
-    var obj;
+    var team_nav = [];
     let user = req.user;
     // axios.get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/3/roster").then(function(response){
     //     //"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams"
@@ -42,13 +42,23 @@ router.get('/',  function(req,res,next){
     // })
     // //console.log(user)
     // //console.log(user.id)
-    axios.get("https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams?limit=32").then(function(response){
 
-    var object = response.data;
-    console.log(object)
+    for (let i = 1; i<35;i++){
+        try{
+            var apiString = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/';
+            var newApiString = apiString.concat(i.toString());
+            team_nav.push(await axios.get(newApiString));
+        }
+        catch(e){
+            console.log("Can't Add Id ", i);
+        }
+    }
 
-    })
-    res.render('./dashboard')
+    //console.log(team_nav.length)
+
+
+
+    res.render('./dashboard',{team_nav})
    
 
 })

@@ -6,6 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+	
+
+
 
 	<link rel="icon" href="../public/imgs/stadium.jpg">
 	<link rel ="stylesheet" type="text/css" href="../public/stylesheets/dashboard.css">
@@ -14,7 +19,7 @@
 
 <!--===============================================================================================-->
 </head>
-<body onload="createGraph()">
+<body>
 
 	<div class="header">
         <ul>
@@ -25,7 +30,7 @@
     </div>
 	<h1>Welcome back User! {{user.first_name}}  {{user.last_name}} </h1>
 
-{{!-- 
+
 	<form action="/dashboard" method="POST">
 		<label>First Name:</label>
 		<input type="text" name="fname" value={{user.first_name}}><br>
@@ -33,55 +38,21 @@
 		<input type="text" name="lname" value={{user.last_name}}><br>
 		<input type="submit" name='button' value="Edit">
 		<input type="submit" name='button' value="Delete">
-
-
-
 	</form>
-	<canvas id="myChart" width="100px" height="100px"></canvas>
-	<script>
-		function createGraph(){
-		console.log({{obj.Linebacker}})
-		const ctx = document.getElementById('myChart').getContext('2d');
-		const myChart = new Chart(ctx, {
-				type: 'bar',
-				data: {
-					labels: ['Linebacker','Center','Safety','Punter','Quarterback','Guard'],
-					datasets: [{
-						label: '# of Players by Position for the Bears',
-						data: [{{obj.Linebacker}},{{obj.Center}},{{obj.Safety}},{{obj.Punter}},{{obj.Quarterback}},{{obj.Guard}}],
-						backgroundColor: [
-							'rgba(255, 99, 132, 0.2)',
-							'rgba(54, 162, 235, 0.2)',
-							'rgba(255, 206, 86, 0.2)',
-							'rgba(75, 192, 192, 0.2)',
-							'rgba(153, 102, 255, 0.2)',
-							'rgba(255, 159, 64, 0.2)'
-						],
-						borderColor: [
-							'rgba(255, 99, 132, 1)',
-							'rgba(54, 162, 235, 1)',
-							'rgba(255, 206, 86, 1)',
-							'rgba(75, 192, 192, 1)',
-							'rgba(153, 102, 255, 1)',
-							'rgba(255, 159, 64, 1)'
-						],
-						borderWidth: 1
-					}]
-				},
-				options: {
-					scales: {
-						y: {
-							beginAtZero: true
-						}
-					}
-				}
-			});
-			ctx.canvas.parentNode.style.height = '400px';
-			ctx.canvas.parentNode.style.width = '400px';
-		}
-	</script> --}}
 
 
+	{{#each team_nav}}
+		<div></div>
+	{{/each}}
+
+
+
+
+
+
+
+
+	
 
 </body>
 </html>
