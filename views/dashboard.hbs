@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js">
+	</script>
 
 	
 
@@ -15,7 +16,7 @@
 	<link rel="icon" href="../public/imgs/stadium.jpg">
 	<link rel ="stylesheet" type="text/css" href="../public/stylesheets/dashboard.css">
 
-
+	
 
 <!--===============================================================================================-->
 </head>
@@ -33,10 +34,26 @@
 		<a>Edit Information</a>
 		<a>All Teams</a>
 		{{#each obj}}
-			<a class="team_{{@index}}">{{data.team.displayName}}</a>
+			<a class="team_{{@index}}" onClick="getData({{@index}})">{{data.team.displayName}}</a>
 		{{/each}}
 
+	
+
 	</div>
+
+	<script>
+		async function getData(index){
+			//console.log(index);
+			var apiString = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/'
+
+			var newApiString = apiString.concat(index.toString(),"/athletes")
+			console.log(newApiString)
+
+			var team_roster = await axios.get(newApiString);
+			console.log(team_roster);
+
+		}
+	</script>
 	
 	<div class="main">
 

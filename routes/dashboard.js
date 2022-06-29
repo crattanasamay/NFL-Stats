@@ -64,7 +64,6 @@ router.get('/',  async function(req,res,next){
     //console.log(team_nav.length)
 
     obj = Object.assign({},team_nav)
-    //console.log(obj[1].data.team.displayName)
 
 
 
