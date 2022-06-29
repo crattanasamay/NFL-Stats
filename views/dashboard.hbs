@@ -28,6 +28,18 @@
             <li><a href="/" class="aligntextright">About</a></li>
         </ul>
     </div>
+
+	<div class="sidenav">
+		<a>Edit Information</a>
+		<a>All Teams</a>
+		{{#each obj}}
+			<a class="team_{{@index}}">{{data.team.displayName}}</a>
+		{{/each}}
+
+	</div>
+	
+	<div class="main">
+
 	<h1>Welcome back User! {{user.first_name}}  {{user.last_name}} </h1>
 
 
@@ -41,9 +53,8 @@
 	</form>
 
 
-	{{#each obj}}
-		<div class="team_{{@index}}">{{data.team.displayName}}</div>
-	{{/each}}
+	</div>
+	
 
 
 
