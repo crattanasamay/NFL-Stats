@@ -53,7 +53,7 @@ router.get('/',  async function(req,res,next){
         
             if(team_name.data.team.displayName.toString() != "Nfc" && team_name.data.team.displayName.toString() != "Afc"){
                 team_nav.push(team_name);
-                console.log(team_name.data.team.displayName)
+                //console.log(team_name.data.team.displayName)
             }
         }
         catch(e){
