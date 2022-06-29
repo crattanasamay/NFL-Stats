@@ -47,7 +47,14 @@ router.get('/',  async function(req,res,next){
         try{
             var apiString = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/';
             var newApiString = apiString.concat(i.toString());
-            team_nav.push(await axios.get(newApiString));
+
+            var team_name = await axios.get(newApiString)
+
+        
+            if(team_name.data.team.displayName.toString() != "Nfc" && team_name.data.team.displayName.toString() != "Afc"){
+                team_nav.push(team_name);
+                console.log(team_name.data.team.displayName)
+            }
         }
         catch(e){
             console.log("Can't Add Id ", i);
@@ -56,9 +63,12 @@ router.get('/',  async function(req,res,next){
 
     //console.log(team_nav.length)
 
+    obj = Object.assign({},team_nav)
+    //console.log(obj[1].data.team.displayName)
 
 
-    res.render('./dashboard',{team_nav})
+
+    res.render('./dashboard',{obj})
    
 
 })
