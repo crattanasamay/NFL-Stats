@@ -41,36 +41,59 @@
 
 	</div>
 
+	<div id="main">
+
+		<h1>Welcome back User! {{user.first_name}}  {{user.last_name}} </h1>
+
+
+		<form action="/dashboard" method="POST">
+			<label>First Name:</label>
+			<input type="text" name="fname" value={{user.first_name}}><br>
+			<label>Last Name:</label>
+			<input type="text" name="lname" value={{user.last_name}}><br>
+			<input type="submit" name='button' value="Edit">
+			<input type="submit" name='button' value="Delete">
+		</form>
+
+
+	</div>
+	
+
 	<script>
 		async function getData(index){
 			//console.log(index);
-			var apiString = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/'
-
-			var newApiString = apiString.concat(index.toString(),"/athletes")
-			console.log(newApiString)
+			var apiString = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/';
+			
+			var newApiString = apiString.concat((index+1).toString(),"/athletes");
+			//console.log(newApiString)
 
 			var team_roster = await axios.get(newApiString);
-			console.log(team_roster);
+			console.log(team_roster.data.items[0]);
+
+			var player_information = await axios.get(team_roster.data.items[0].$ref);
+			//console.log(player_information)
+			//console.log(player_information.data.fullName)
+			//console.log(player_information.data.position.displayName)
+			//console.log(player_information.data.jersey)
+			//console.log(player_information.data.displayHeight)
+			//console.log(player_information.data.age)
+			//console.log(player_information.data.headshot.href)
+			//console.log(player_information.data.displayWeight)
+
+			const playerCard = document.createElement("div");
+			playerCard.className= "Player Card";
+			const fullNameNode  = document.createTextNode(player_information.data.fullName);
+			playerCard.appendChild(fullNameNode);
+
+			document.getElementById("main").appendChild(playerCard);
+
+
+
+
 
 		}
 	</script>
 	
-	<div class="main">
-
-	<h1>Welcome back User! {{user.first_name}}  {{user.last_name}} </h1>
-
-
-	<form action="/dashboard" method="POST">
-		<label>First Name:</label>
-		<input type="text" name="fname" value={{user.first_name}}><br>
-		<label>Last Name:</label>
-		<input type="text" name="lname" value={{user.last_name}}><br>
-		<input type="submit" name='button' value="Edit">
-		<input type="submit" name='button' value="Delete">
-	</form>
-
-
-	</div>
 	
 
 

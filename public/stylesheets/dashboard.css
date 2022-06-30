@@ -58,6 +58,6 @@ li a {
     color: #f1f1f1;
   }
   
-  .main {
+  #main {
     margin-left: 200px; /* Same as the width of the sidenav */
   }
