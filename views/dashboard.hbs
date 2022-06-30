@@ -68,9 +68,9 @@
 			//console.log(newApiString)
 
 			var team_roster = await axios.get(newApiString);
-			console.log(team_roster.data.items[0]);
+			//console.log(team_roster.data.items.length);
 
-			var player_information = await axios.get(team_roster.data.items[0].$ref);
+			//var player_information = await axios.get(team_roster.data.items.$ref);
 			//console.log(player_information)
 			//console.log(player_information.data.fullName)
 			//console.log(player_information.data.position.displayName)
@@ -80,12 +80,54 @@
 			//console.log(player_information.data.headshot.href)
 			//console.log(player_information.data.displayWeight)
 
-			const playerCard = document.createElement("div");
-			playerCard.className= "Player Card";
-			const fullNameNode  = document.createTextNode(player_information.data.fullName);
-			playerCard.appendChild(fullNameNode);
+			for(let i = 0; i<team_roster.data.items.length;i++){
+				var player_information = await axios.get(team_roster.data.items[i].$ref);
 
-			document.getElementById("main").appendChild(playerCard);
+			
+				//console.log(player_information)
+				const playerCard = document.createElement("div");
+				playerCard.className= "player_card";
+
+				if(player_information.data.headshot){
+					const playerHeadShot = player_information.data.headshot.href
+
+					const playerPhoto = document.createElement("img")
+					playerPhoto.src = playerHeadShot;
+					playerCard.append(playerPhoto);
+				}
+				else{
+					const playerHeadShot = ""
+					const playerPhoto = document.createElement("img")
+					playerPhoto.src = playerHeadShot;
+					playerCard.append(playerPhoto)
+				}
+				
+
+				const playerName = document.createElement("h1");
+				const fullNameNode  = document.createTextNode(player_information.data.fullName);
+				playerName.appendChild(fullNameNode);
+				playerCard.appendChild(playerName);
+
+				const playerPosition = document.createElement("h2");
+				const positionNode = document.createTextNode("Position: " + player_information.data.position.displayName);
+				playerPosition.appendChild(positionNode);
+				playerCard.appendChild(playerPosition);
+
+			
+				
+
+				
+			
+				
+				
+			
+				document.getElementById("main").appendChild(playerCard);
+
+
+			}
+
+
+	
 
 
 

@@ -60,4 +60,27 @@ li a {
   
   #main {
     margin-left: 200px; /* Same as the width of the sidenav */
+    padding: 0px;
   }
+
+h1{
+    font-size:20px;
+  }
+
+.player_card{
+  position:relative;
+  height:400px;
+  width: 250px;
+  border-radius:20px;
+  border: 2px solid black;
+  justify-content: center;
+  align-content: center;
+  display:inline-block;
+  padding: 5px;
+}
+
+.player_card img{
+ width:150px;
+ height:125px;
+
+}
