@@ -62,7 +62,7 @@
 	<script>
 		async function getData(index){
 			//console.log(index);
-			var apiString = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/';
+			var apiString = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2022/teams/';
 			
 			var newApiString = apiString.concat((index+1).toString(),"/athletes");
 			//console.log(newApiString)
@@ -82,6 +82,8 @@
 
 			for(let i = 0; i<team_roster.data.items.length;i++){
 				var player_information = await axios.get(team_roster.data.items[i].$ref);
+
+				console.log(team_roster.data)
 
 			
 				//console.log(player_information)
