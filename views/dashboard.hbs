@@ -101,6 +101,7 @@
 					const playerHeadShot = ""
 					const playerPhoto = document.createElement("img")
 					playerPhoto.src = playerHeadShot;
+					playerPhoto.alt = "N/A"
 					playerCard.append(playerPhoto)
 				}
 				
@@ -123,7 +124,7 @@
 				
 				
 			
-				document.getElementById("main").appendChild(playerCard);
+				await document.getElementById("main").appendChild(playerCard);
 
 
 			}

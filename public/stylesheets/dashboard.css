@@ -68,7 +68,7 @@ h1{
   }
 
 .player_card{
-  position:relative;
+  margin-left: 20px;
   height:400px;
   width: 250px;
   border-radius:20px;
@@ -76,11 +76,15 @@ h1{
   justify-content: center;
   align-content: center;
   display:inline-block;
-  padding: 5px;
+  background-color: #818181;
+  position:relative;
+  margin:auto;
 }
 
 .player_card img{
- width:150px;
- height:125px;
+  justify-content: center;
+  align-items: center;
+  width:150px;
+  height:125px;
 
 }
